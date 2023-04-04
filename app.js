@@ -64,7 +64,7 @@ function showResults() {
 
     // Create the chart using Chart.js
     const chart = new Chart(canvas, {
-        type: 'pie',
+        type: 'bar',
         data: {
             labels: labels,
             datasets: [{
@@ -86,3 +86,26 @@ function showResults() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const viewResultsBtn = document.querySelector('.view-results-btn');
+    viewResultsBtn.addEventListener('click', showResults);
+});
+
+// localstorage function
+
+// instructions: Store the products array into local storage as a formatted JSON string
+// Retrieve the products array from local storage and then utilize the JSON.Parse() 
+// function. Remember, if your constructor utilizes prototype methods, you will have to 
+// send each item in the array back through the constructor function.
+
+localStorage.setItem('product', JSON.stringify(Object));
+
+let myObj = JSON.parse(localStorage.getItem('product'));
+
+localStorage.imageFiles = JSON.stringify(product);
+
+let myJSON = JSON.parse(localStorage.imageFiles);
+
+let string = localStorage.setItem('product');
+localStorage.setItem('product', str);

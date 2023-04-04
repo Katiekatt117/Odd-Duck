@@ -5,8 +5,10 @@
 }
 
 h1 {
-  color: rgb(251, 47, 98);
-  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  text-align: center;
+  border: 30px ridge #f69c9c;
   font-weight: bold;
   font-family: monospace;
   letter-spacing: 7px;
@@ -16,7 +18,8 @@ h1 {
 body {
   font-family: Arial, sans-serif;
   background-color: #ff275d;
-  color: #050001;
+  color: #ffffff;
+  font-size: 25px;
 }
 
 .product-container {

@@ -103,16 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // function. Remember, if your constructor utilizes prototype methods, you will have to 
 // send each item in the array back through the constructor function.
 
-localStorage.setItem('product', JSON.stringify(Object));
+// localStorage.setItem('product', JSON.stringify(Object));
 
-let myObj = JSON.parse(localStorage.getItem('product'));
+// let myObj = JSON.parse(localStorage.getItem('product'));
 
-localStorage.imageFiles = JSON.stringify(product);
+// localStorage.imageFiles = JSON.stringify(product);
 
-let myJSON = JSON.parse(localStorage.imageFiles);
+// let myJSON = JSON.parse(localStorage.imageFiles);
 
-let string = localStorage.setItem('product');
-localStorage.setItem('product', str);
+// let string = localStorage.setItem('product');
+// localStorage.setItem('product', str);
 
 // load from local storage
 function loadSettings() {

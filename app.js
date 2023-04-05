@@ -120,7 +120,7 @@ function loadSettings() {
     if (getSettings) {
         console.log(getSettings); //
         imageCount = JSON.parse(getSettings);
-        console.log(settings); //
+        console.log(imageCount); //
     }
 }
 

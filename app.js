@@ -49,6 +49,7 @@ updateImages();
 product1Span.addEventListener('click', updateImages);
 product2Span.addEventListener('click', updateImages);
 product3Span.addEventListener('click', updateImages);
+//product1Span.removeEventListener
 
 // Event listener for the View Results button
 const viewResultsBtn = document.querySelector('.view-results-btn');
@@ -85,11 +86,14 @@ function showResults() {
             }
         }
     });
+    saveSettings()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     const viewResultsBtn = document.querySelector('.view-results-btn');
     viewResultsBtn.addEventListener('click', showResults);
+
+    loadSettings()
 });
 
 // localstorage function
@@ -109,3 +113,25 @@ let myJSON = JSON.parse(localStorage.imageFiles);
 
 let string = localStorage.setItem('product');
 localStorage.setItem('product', str);
+
+// load from local storage
+function loadSettings() {
+    let getSettings = localStorage.getItem("product");
+    if (getSettings) {
+        console.log(getSettings); //
+        imageCount = JSON.parse(getSettings);
+        console.log(settings); //
+    }
+}
+
+// save to local storage
+function saveSettings() {
+    let stringify = JSON.stringify(imageCount);
+    localStorage.setItem("product", stringify);
+    console.log(stringify); //
+}
+
+
+
+
+

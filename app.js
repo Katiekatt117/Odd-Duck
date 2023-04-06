@@ -1,3 +1,30 @@
+// variables that select elements in the html
+let productContainer = document.querySelector("section");
+let resultButton = document.querySelector("section + div");
+let image1 = document.querySelector("section img:first-child");
+let image2 = document.querySelector("section img:nth-child(2)");
+let image3 = document.querySelector("section img:nth-child(3)");
+
+// this sets the beginning click for the clicking vote
+let click = 0;
+// this sets the maxium clicks entirely
+let maxClicksAllowed = 25;
+
+const views = {};
+
+// holds the current state of the app and products
+const state = {
+  allproductsArray: [],
+};
+
+// functional logic
+
+function product(path, name) {
+  this.name = name;
+  this.path = path;
+  this.views = 0;
+  this.click = 0;
+}
 // image array
 const imageFiles = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg'];
 

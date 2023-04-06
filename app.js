@@ -1,8 +1,36 @@
+// variables that select elements in the html
+let productContainer = document.querySelector("section");
+let resultButton = document.querySelector("section + div");
+let image1 = document.querySelector("section img:first-child");
+let image2 = document.querySelector("section img:nth-child(2)");
+let image3 = document.querySelector("section img:nth-child(3)");
+
+// this sets the beginning click for the clicking vote
+let click = 0;
+// this sets the maxium clicks entirely
+let maxClicksAllowed = 25;
+
+const views = {};
+
+// holds the current state of the app and products
+const state = {
+    allproductsArray: [],
+};
+
+// functional logic
+
+function product(path, name) {
+    this.name = name;
+    this.path = path;
+    this.views = 0;
+    this.click = 0;
+}
+
 // image array
 const imageFiles = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.jpg', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg'];
 
 // dis is da image counter
-const imageCount = {};
+let imageCount = {};
 
 // randomizer
 function getRandomElement(array) {
@@ -10,6 +38,7 @@ function getRandomElement(array) {
 }
 
 // function to update images
+// this is also getRandomNumber for product 1
 function updateImages() {
     const product1Image = getRandomElement(imageFiles);
     product1Span.innerHTML = `<img class='img' src="images/${product1Image}">`;
@@ -19,6 +48,7 @@ function updateImages() {
         imageCount[product1Image] = 1;
     }
 
+    // this is the getRandomNumber for product 2
     const product2Image = getRandomElement(imageFiles);
     product2Span.innerHTML = `<img class='img' src="images/${product2Image}">`;
     if (imageCount[product2Image]) {
@@ -27,6 +57,7 @@ function updateImages() {
         imageCount[product2Image] = 1;
     }
 
+    // this is the getRandomNumber for product 3
     const product3Image = getRandomElement(imageFiles);
     product3Span.innerHTML = `<img class='img' src="images/${product3Image}">`;
     if (imageCount[product3Image]) {
@@ -103,16 +134,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // function. Remember, if your constructor utilizes prototype methods, you will have to 
 // send each item in the array back through the constructor function.
 
-localStorage.setItem('product', JSON.stringify(Object));
+// localStorage.setItem('product', JSON.stringify(Object));
 
-let myObj = JSON.parse(localStorage.getItem('product'));
+// let myObj = JSON.parse(localStorage.getItem('product'));
 
-localStorage.imageFiles = JSON.stringify(product);
+// localStorage.imageFiles = JSON.stringify(product);
 
-let myJSON = JSON.parse(localStorage.imageFiles);
+// let myJSON = JSON.parse(localStorage.imageFiles);
 
-let string = localStorage.setItem('product');
-localStorage.setItem('product', str);
+// let string = localStorage.setItem('product');
+// localStorage.setItem('product', str);
 
 // load from local storage
 function loadSettings() {
@@ -120,7 +151,7 @@ function loadSettings() {
     if (getSettings) {
         console.log(getSettings); //
         imageCount = JSON.parse(getSettings);
-        console.log(settings); //
+        console.log(imageCount); //
     }
 }
 
